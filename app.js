@@ -4,7 +4,7 @@ module.exports = function () {
   var express = require('express');
   var app = express();
 
-  app.use(function (request, response) {
+  app.use('/', function (request, response) {
 
     var messages = [];
 
