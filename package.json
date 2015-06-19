@@ -1,0 +1,25 @@
+{
+  "name": "dev-mtn-node-day-2",
+  "version": "1.0.0",
+  "description": "Our coding time together... <3",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coolaj86/dev-mtn-node-day-2.git"
+  },
+  "keywords": [
+    "demo",
+    "students",
+    "live",
+    "coding"
+  ],
+  "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.com/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/coolaj86/dev-mtn-node-day-2/issues"
+  },
+  "homepage": "https://github.com/coolaj86/dev-mtn-node-day-2#readme"
+}
