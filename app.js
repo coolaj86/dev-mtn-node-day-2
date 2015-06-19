@@ -4,11 +4,19 @@ module.exports = function () {
   var express = require('express');
   var app = express();
   var path = require('path');
-  var messages = ['Hello', 'My name is bob!'];
+  var bodyParser = require('body-parser');
+  var messages = [];
 
   // C:\blablatnaoeh\ntaoeunstahoeu
   // /Users/bob/Documents
   app.use(express.static(path.join(__dirname, 'public')));
+
+  app.use('/api', bodyParser.json({
+    inflate: true
+  , limit: 1024 * 1024
+  , reviver: null
+  , strict: true
+  }));
 
   app.use('/', function (request, response, next) {
     console.log(request.method, request.url);
@@ -24,14 +32,9 @@ module.exports = function () {
   });
 
   app.post('/api/message', function (request, response) {
-    var msg = '';
-    request.on('data', function (chunk) {
-      msg += chunk.toString('utf-8');
-    });
-    request.on('end', function () {
-      messages.push(msg);
-      response.end('{ success: true }');
-    });
+    var msg = request.body;
+    messages.push(msg);
+    response.send({ success: true });
   });
 
   app.use('/api', function (request, response) {
