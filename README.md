@@ -41,3 +41,11 @@ vim app.js
 # use body-parser
 npm install --save express@4.x
 ```
+
+```bash
+curl -X GET https://localhost.daplie.com:8443/api/message
+
+curl -X POST https://localhost.daplie.com:8443/api/message \
+  -H 'Content-Type: application/json; charset=utf-8' \
+  -d '{ "name": "Bob", "msg": "Hello everyone!" }'
+```
