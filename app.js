@@ -27,6 +27,14 @@ module.exports = function () {
     response.send('You FOUND ME!!!! bwahahahaha');
   });
 
+  app.get('/api/echo/:msg?', function (request, response) {
+    response.send(request.params.msg || 'The cake is a lie!');
+  });
+
+  app.get('/api/message', function (request, response) {
+    response.send(messages);
+  });
+
   app.get('/api/message', function (request, response) {
     response.send(messages);
   });
