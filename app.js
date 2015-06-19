@@ -3,7 +3,12 @@
 module.exports = function () {
   var express = require('express');
   var app = express();
+  var path = require('path');
   var messages = ['Hello', 'My name is bob!'];
+
+  // C:\blablatnaoeh\ntaoeunstahoeu
+  // /Users/bob/Documents
+  app.use(express.static(path.join(__dirname, 'public')));
 
   app.use('/', function (request, response, next) {
     console.log(request.method, request.url);
@@ -11,7 +16,7 @@ module.exports = function () {
   });
 
   app.use('/secret', function (request, response) {
-    response.end('You FOUND ME!!!! bwahahahaha');
+    response.send('You FOUND ME!!!! bwahahahaha');
   });
 
   app.get('/api/message', function (request, response) {
